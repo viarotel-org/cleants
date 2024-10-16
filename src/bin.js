@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import Cleants from './index.js'
+import { capitalizeFirstLetter } from './helpers/index.js'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import * as p from '@clack/prompts'
@@ -9,7 +10,7 @@ import ora from 'ora'
 
 yargs(hideBin(process.argv))
   .command('$0', description, () => {}, async (argv) => {
-    p.intro(`Welcome to ${name} v${version}`)
+    p.intro(`${capitalizeFirstLetter(name)}: ${description}. Supported by Viarotel v${version}`)
 
     const inputDir = await p.text({
       message: 'Enter the TypeScript project directory to convert:',

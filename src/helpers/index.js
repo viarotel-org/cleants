@@ -58,3 +58,14 @@ export function getNewFilePath(filePath) {
 
   return filePath.replace(ext, extensionMap[ext])
 }
+
+/**
+ * 将字符串首字母转为大写
+ * @param {*} str
+ * @returns {string}
+ */
+export function capitalizeFirstLetter(str) {
+  if (!str)
+    return str
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}

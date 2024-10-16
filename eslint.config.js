@@ -3,7 +3,6 @@ import antfu from '@antfu/eslint-config'
 export default antfu(
   {
     typescript: false,
-    markdown: false,
     ignores: [
       '.github',
       '.vscode',
@@ -36,12 +35,12 @@ export default antfu(
       'prefer-promise-reject-errors': 'off',
       'no-unused-expressions': 'off',
       'sort-imports': 'off',
+      'no-useless-constructor': 'off',
 
       'unicorn/consistent-function-scoping': 'off',
       'regexp/no-unused-capturing-group': 'off',
       'regexp/no-dupe-disjunctions': 'off',
       'perfectionist/sort-imports': 'off',
-      'antfu/no-top-level-await': 'off',
     },
   },
 )

@@ -14,7 +14,6 @@
     "typescript",
     "javascript",
     "converter",
-    "electron",
     "vue"
   ],
   "publishConfig": {
