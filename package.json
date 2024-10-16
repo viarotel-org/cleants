@@ -1,7 +1,7 @@
 {
   "name": "cleants",
   "type": "module",
-  "version": "0.0.1-2",
+  "version": "0.0.1-3",
   "packageManager": "pnpm@9.12.1",
   "description": "🧹 Convert TypeScript to a cleaner JavaScript project",
   "author": "viarotel",
@@ -43,11 +43,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@clack/prompts": "^0.7.0",
     "@vue/compiler-sfc": "^3.5.12",
-    "citty": "^0.1.6",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
-    "typescript": "^5.6.3"
+    "ora": "^8.1.0",
+    "typescript": "^5.6.3",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
