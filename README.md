@@ -34,13 +34,13 @@ pnpm add cleants
 
 ## Usage
 
-1. CLI Usage
+CLI Usage
 
 ```bash
 npx cleants
 ```
 
-2. Programmatic Usage
+Programmatic Usage
 
 ```javascript
 import { Cleants } from 'cleants'
