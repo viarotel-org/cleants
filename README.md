@@ -53,6 +53,10 @@ await cleaner.run()
 
 ## API
 
+### `Cleants`
+
+> 核心，用于将 TypeScript 项目转换为更清洁的 JavaScript 项目。
+
 #### 构造函数
 
 ```typescript
