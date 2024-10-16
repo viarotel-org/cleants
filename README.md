@@ -24,7 +24,7 @@
 
 ## Install
 
-```bash
+```shell
 npm install cleants
 # or
 yarn add cleants
@@ -36,7 +36,7 @@ pnpm add cleants
 
 CLI Usage
 
-```bash
+```shell
 npx cleants
 ```
 
