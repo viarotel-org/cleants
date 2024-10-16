@@ -49,45 +49,86 @@ const cleaner = new Cleants(inputDir, outputDir, options)
 await cleaner.run()
 ```
 
-当然，我可以为您将该 JSDoc 转换为简洁美观的 Markdown 格式。以下是转换后的 API 文档：
-
 ## API
 
 ### `Cleants`
 
-> 核心，用于将 TypeScript 项目转换为更清洁的 JavaScript 项目。
+The main class used to convert a TypeScript project into a cleaner JavaScript project.
 
-#### 构造函数
+#### Constructor
 
 ```typescript
 constructor(inputDir: string, outputDir: string, options?: CleantsOptions)
 ```
 
-##### 参数
+##### Parameters
 
-- `inputDir: string` - 输入目录路径
-- `outputDir: string` - 输出目录路径
-- `options?: CleantsOptions` - 可选配置选项
+- `inputDir: string` - The input directory path
+- `outputDir: string` - The output directory path
+- `options?: CleantsOptions` - Optional configuration options
 
-##### CleantsOptions
+#### CleantsOptions
 
-| 选项                         | 类型                                  | 描述                  |
-| ---------------------------- | ------------------------------------- | --------------------- |
-| `progressCallback?`          | `Function`                            | 进度回调函数          |
-| `compilerOptions?`           | `Object`                              | TypeScript 编译器选项 |
-| `ignoredCopyPatterns?`       | `Array<string \| RegExp \| Function>` | 复制时要忽略的模式    |
-| `ignoredConversionPatterns?` | `Array<string \| RegExp \| Function>` | 转换时要忽略的模式    |
-| `getOutputDir?`              | `Function`                            | 获取输出目录的函数    |
-| `removeDependencies?`        | `Array<string>`                       | 要移除的依赖项        |
-| `replaceInternalImports?`    | `boolean`                             | 是否替换内部导入      |
+##### `progressCallback?: Function`
+Progress callback function.
+Default: `undefined`
+
+##### `compilerOptions?: Object`
+TypeScript compiler options.
+Default: `{}`
+
+##### `ignoredCopyPatterns?: Array<string | RegExp | Function>`
+Patterns to ignore during the copy phase.
+Default:
+```javascript
+[
+  'node_modules',
+  '.git',
+  'dist',
+  /\.d\.ts$/,
+  file => file.endsWith('.log')
+]
+```
+
+##### `ignoredConversionPatterns?: Array<string | RegExp | Function>`
+Patterns to ignore during the conversion phase.
+Default:
+```javascript
+[
+  'vendor',
+  /\.min\.js$/,
+  file => file.includes('legacy')
+]
+```
+
+##### `getOutputDir?: Function`
+Function to get the output directory.
+Default: `` inputDir => `${path.basename(inputDir)}.cleants` ``
+
+##### `removeDependencies?: Array<string>`
+Dependencies to remove.
+Default: `['typescript', 'vue-tsc', '@types/node']`
+
+##### `replaceInternalImports?: boolean`
+Whether to replace internal imports.
+Default: `true`
+
+##### `plugins?: Array<Plugin>`
+List of plugins to use.
+Default: `[basePlugin, vuePlugin]`
+
+#### Notice
+
+- `actualOutputDir` is set to `path.join(outputDir, options.getOutputDir(inputDir))`
+- If no `options.plugins` are provided, the default is `[basePlugin, vuePlugin]`
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome! Feel free to check [issues page](https://github.com/viarotel-org/cleants/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/viarotel-org/cleants/issues).
 
 ## Support
 
-If you feel that this project is helpful for your work or study, please help me order a ✨ Star, which will be a great encouragement and support for me, or you can buy me a cup of coffee below
+If you find this project helpful for your work or study, please consider starring the project or buying me a cup of coffee through the links below:
 
 <div style="display:flex;">
   <img src="https://cdn.jsdelivr.net/gh/viarotel-org/escrcpy@main/screenshots/zh-CN/viarotel-wepay.jpg" alt="viarotel-wepay" width="30%">
