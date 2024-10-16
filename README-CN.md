@@ -57,9 +57,7 @@ await cleaner.run()
 
 #### 构造函数
 
-```typescript
-constructor(inputDir: string, outputDir: string, options?: CleantsOptions)
-```
+`constructor(inputDir: string, outputDir: string, options?: CleantsOptions)`
 
 ##### 参数
 

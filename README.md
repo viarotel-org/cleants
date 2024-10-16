@@ -57,9 +57,7 @@ The main class used to convert a TypeScript project into a cleaner JavaScript pr
 
 #### Constructor
 
-```typescript
-constructor(inputDir: string, outputDir: string, options?: CleantsOptions)
-```
+`constructor(inputDir: string, outputDir: string, options?: CleantsOptions)`
 
 ##### Parameters
 
