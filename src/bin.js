@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import cleants from './index.js'
+import Cleants from './index.js'
 
 import { defineCommand, runMain } from 'citty'
 
@@ -30,7 +30,7 @@ const main = defineCommand({
     },
   },
   async run({ args }) {
-    const cleants = new cleants(args.inputDir, args.outputDir)
+    const cleants = new Cleants(args.inputDir, args.outputDir)
     await cleants.convert()
   },
 })

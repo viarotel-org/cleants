@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.1-2
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-1...v0.0.1-2)
+
 ## v0.0.1-1
 
 

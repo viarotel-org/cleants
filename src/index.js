@@ -6,9 +6,9 @@ import ts from 'typescript'
 import { basePlugin, replacePlugin, vuePlugin } from './plugins/index.js'
 
 /**
- * cleants 类用于将 TypeScript 项目转换为 JavaScript 项目。
+ * Cleants 类用于将 TypeScript 项目转换为 JavaScript 项目。
  */
-class cleants {
+class Cleants {
   /**
    * @param {string} inputDir - 输入目录路径。
    * @param {string} outputDir - 输出目录路径。
@@ -306,4 +306,4 @@ class cleants {
   }
 }
 
-export default cleants
+export default Cleants
