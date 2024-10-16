@@ -1,16 +1,26 @@
 # Cleants
 
-[![npm version][]](https://www.npmjs.com/package/cleants)[![License: MIT][]](https://opensource.org/licenses/MIT)
+<!-- automd:badges -->
 
-🧹 Convert TypeScript to a cleaner JavaScript project
+[![npm version](https://img.shields.io/npm/v/cleants)](https://npmjs.com/package/cleants)
+[![npm downloads](https://img.shields.io/npm/dm/cleants)](https://npm.chart.dev/cleants)
+
+<!-- /automd -->
+
+> 🧹 Convert TypeScript to a cleaner JavaScript project
 
 ## Features
 
-- Vue: 对 Vue 项目转换具有第一优先级的支持
-- 可扩展: 通过插件扩展对不同类型文件转换支持
-- 快速的: 使用 ts.transpileModule 具有极快的转译速度
-- 便捷性: 提供 CLI 命令只需要一句命令即可快速转换
-- 集成: 你可以导入NPM包将集成到你的项目中
+- 🖖 Vue-First: Priority support for Vue project conversion
+- 🔌 Extensible: Plugin system for supporting various file types
+- ⚡ Lightning Fast: Utilizes ts.transpileModule for rapid transpilation
+- 🖥️ User-Friendly CLI: Quick conversion with a single command
+- 🧩 Seamless Integration: Import as an npm package for easy project integration
+- 🛠️ Customizable: Fine-tune the conversion process with flexible options
+- 📊 Progress Tracking: Real-time feedback on conversion status
+- 🎯 Selective Conversion: Ignore specific patterns during copy and conversion
+- 📦 Dependency Management: Option to remove specified dependencies
+- 🔄 Import Optimization: Capability to replace internal imports
 
 ## Install
 
