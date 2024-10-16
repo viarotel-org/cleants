@@ -1,0 +1,2 @@
+
+find "src" -type f -exec git update-index --chmod=+x {} +

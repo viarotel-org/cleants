@@ -1,0 +1,59 @@
+{
+  "name": "cleants",
+  "type": "module",
+  "version": "0.0.1-0",
+  "packageManager": "pnpm@9.12.1",
+  "description": "Convert TypeScript to a cleaner JavaScript project",
+  "author": "viarotel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viarotel-org/cleants.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "converter",
+    "electron",
+    "vue"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "bin": {
+    "cleants": "dist/bin.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "unbuild && npx .",
+    "build": "unbuild",
+    "release": "changelogen --release --prerelease && npm publish && git push --follow-tags",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.5.12",
+    "citty": "^0.1.6",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "changelogen": "^0.5.7",
+    "eslint": "^9.12.0",
+    "husky": "^9.1.6",
+    "unbuild": "latest"
+  }
+}
