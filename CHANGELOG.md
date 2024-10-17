@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.1-10
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-9...v0.0.1-10)
+
+### 🩹 Fixes
+
+- 🐛 Entry function name error ([0c80f89](https://github.com/viarotel-org/cleants/commit/0c80f89))
+
+### 🏡 Chore
+
+- **release:** V0.0.1-9 ([f0e0f42](https://github.com/viarotel-org/cleants/commit/f0e0f42))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.1-9
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-8...v0.0.1-9)
