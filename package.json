@@ -1,7 +1,7 @@
 {
   "name": "cleants",
   "type": "module",
-  "version": "0.0.1-6",
+  "version": "0.0.1-7",
   "packageManager": "pnpm@9.12.1",
   "description": "🧹 Convert TypeScript to a cleaner JavaScript project",
   "author": "viarotel",

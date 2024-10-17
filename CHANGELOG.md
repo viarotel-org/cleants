@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.1-7
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-6...v0.0.1-7)
+
+### 📖 Documentation
+
+- 📝 Update README ([26e759d](https://github.com/viarotel-org/cleants/commit/26e759d))
+
+### 🏡 Chore
+
+- **release:** V0.0.1-6 ([ab0d53d](https://github.com/viarotel-org/cleants/commit/ab0d53d))
+
+### 🤖 CI
+
+- 🔧 Repairing production asset failed to publish ([8b40201](https://github.com/viarotel-org/cleants/commit/8b40201))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.1-6
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-5...v0.0.1-6)
