@@ -152,7 +152,7 @@ TypeScript 编译器选项。
 </a>
 
 ## 📚 关键词
-`typescript` `javascript` `converter` `electron` `vue`
+`typescript` `javascript` `converter` `vue` `cli`
 
 ## 许可证
 

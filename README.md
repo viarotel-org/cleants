@@ -152,7 +152,7 @@ Thanks for all their contributions!
 </a>
 
 ## 📚 Keywords
-`typescript` `javascript` `converter` `electron` `vue`
+`typescript` `javascript` `converter` `vue` `cli`
 
 ## License
 
