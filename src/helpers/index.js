@@ -4,35 +4,55 @@ import { pathToFileURL } from 'node:url'
 
 import { extensionMap } from '../constants/index.js'
 
+/**
+ * 检查给定内容中是否包含 <script> 标签。
+ *
+ * @param {string} content - 要检查的 HTML 内容。
+ * @returns {boolean} 如果内容中包含 <script> 标签，则返回 true；否则返回 false。
+ */
 export function hasScriptTag(content) {
   const regex = /<script\b[^>]*>([\s\S]*?)<\/script>|<script\b[^>]*\/>/i
 
   return regex.test(content)
 }
 
+/**
+ * 更新给定内容中所有 <script> 标签的属性。
+ *
+ * @param {string} content - 包含 <script> 标签的 HTML 内容。
+ * @param {Object} attrsToUpdate - 要更新的属性及其新值的对象，键为属性名，值为新值。
+ * @returns {string} 更新后的 HTML 内容，其中 <script> 标签的属性已被更新。
+ */
 export function updateScriptAttrs(content, attrsToUpdate) {
-  // 创建正则表达式以匹配 <script> 标签及其属性
-  const scriptRegex = /<script([^>]*)>/g
+  const scriptRegex = /<script\b([^>]*)>/gi
 
-  // 替换 <script> 标签中的属性
-  const updatedContent = content.replace(scriptRegex, (match, attrs) => {
-    // 将属性字符串分割为单个属性
-    const attributes = attrs.trim().split(/\s+/)
+  return content.replace(scriptRegex, (match, attrs) => {
+    const updatedAttrs = new Map(
+      attrs
+        .trim()
+        .split(/\s+/)
+        .map((attr) => {
+          const [name, ...valueParts] = attr.split('=')
+          const value = valueParts.join('=')
+          return [name, value ? value.replace(/^["']|["']$/g, '') : '']
+        }),
+    )
 
-    // 更新指定的属性
-    const updatedAttrs = attributes.map((attr) => {
-      const [attrName, attrValue] = attr.split('=')
-      if (attrsToUpdate[attrName]) {
-        return `${attrName}="${attrsToUpdate[attrName]}"` // 更新属性值
+    for (const [name, value] of Object.entries(attrsToUpdate)) {
+      if (value !== undefined) {
+        updatedAttrs.set(name, value)
       }
-      return attr // 保留未更新的属性
-    })
+      else {
+        updatedAttrs.delete(name)
+      }
+    }
 
-    // 重新构建 <script> 标签
-    return `<script ${updatedAttrs.join(' ')}>`
+    const attrString = Array.from(updatedAttrs)
+      .map(([name, value]) => (value ? `${name}="${value}"` : name))
+      .join(' ')
+
+    return `<script${attrString ? ` ${attrString}` : ''}>`
   })
-
-  return updatedContent
 }
 
 /**

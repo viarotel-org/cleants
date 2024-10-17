@@ -82,7 +82,7 @@ class Cleants {
     this.progressCallback({ stage: 'copy', progress: 20 })
 
     await this.processFiles()
-    this.progressCallback({ stage: 'convert', progress: 60 })
+    this.progressCallback({ stage: 'converting', progress: 60 })
 
     await this.updateConfig()
     await this.updatePackage()
@@ -294,8 +294,8 @@ class Cleants {
 
       // 移除指定的依赖项
       this.options.removeDependencies.forEach((dep) => {
-        delete packageJson.dependencies[dep]
-        delete packageJson.devDependencies[dep]
+        delete packageJson?.dependencies?.[dep]
+        delete packageJson?.devDependencies?.[dep]
       })
 
       // 更新 scripts

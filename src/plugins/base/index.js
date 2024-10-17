@@ -8,9 +8,9 @@ export const basePlugin = () => ({
   extensions: Object.keys(extensionMap),
 
   processFile: async (file, content, ctx) => {
-    const processFContent = ctx.transpileFile(content, path.extname(file))
+    const processContent = ctx.transpileFile(content, path.extname(file))
 
-    return processFContent
+    return processContent
   },
 
   writeFile: async (file, content, ctx) => {

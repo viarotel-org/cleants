@@ -33,6 +33,9 @@ export const vuePlugin = () => ({
 
     processContent = updateScriptAttrs(processContent, { lang: replaceLang })
 
+    // TODO 在 .vue 文件中需要去除ts编译器生成的冗余的导出
+    processContent = processContent.replaceAll('export {};', '')
+
     return processContent
   },
 
