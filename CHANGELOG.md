@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.1-8
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-7...v0.0.1-8)
+
+### 🩹 Fixes
+
+- 🐛 Fixed the issue that replaceInternalImports configuration does not take effect in CLI ([0771859](https://github.com/viarotel-org/cleants/commit/0771859))
+
+### 🏡 Chore
+
+- **release:** V0.0.1-7 ([43b9617](https://github.com/viarotel-org/cleants/commit/43b9617))
+
+### 🎨 Styles
+
+- 📝 Update .gitattributes ([0ea8e30](https://github.com/viarotel-org/cleants/commit/0ea8e30))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.1-7
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-6...v0.0.1-7)
