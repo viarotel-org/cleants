@@ -51,8 +51,8 @@ await cleaner.run()
 
 ```javascript
 module.exports = {
-  inputDir: 'D:\\user\\test',
-  outputDir: 'C:\\Users\\user\\Downloads'
+  inputDir: 'D:\\Projects\\demo',
+  outputDir: 'C:\\Users\\viarotel\\Downloads'
 }
 ```
 
