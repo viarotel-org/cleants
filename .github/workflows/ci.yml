@@ -9,10 +9,6 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for the tag push to complete
-        run: |
-          sleep 30
-
       - name: Checkout
         uses: actions/checkout@v4
 
