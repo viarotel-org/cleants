@@ -17,7 +17,8 @@ function runCommand() {
       const fileOptions = await loadConfig()
 
       let inputDir = io[0] || fileOptions.inputDir
-      let outputDir = io[1] || fileOptions.outputDir
+      let outputDir = io[1] || fileOptions.outputDir || './'
+      let replaceInternalImports = cleantsOptions.replaceInternalImports ?? fileOptions.replaceInternalImports ?? true
 
       inputDir = await p.text({
         message: 'Enter the TypeScript project directory to convert:',
@@ -28,12 +29,12 @@ function runCommand() {
       outputDir = await p.text({
         message: 'Enter the output project directory:',
         validate: value => value.trim() === '' ? 'This field is required' : undefined,
-        initialValue: outputDir || './',
+        initialValue: outputDir,
       })
 
-      const replaceInternalImports = await p.confirm({
+      replaceInternalImports = await p.confirm({
         message: 'Automatically replace the suffix of inline imports?',
-        initialValue: true,
+        initialValue: replaceInternalImports,
       })
 
       if (p.isCancel(inputDir) || p.isCancel(outputDir) || p.isCancel(replaceInternalImports)) {
@@ -48,7 +49,7 @@ function runCommand() {
           spinner.text = `${stage}: ${progress.toFixed(2)}%`
         }
 
-        const cleants = new Cleants(inputDir, outputDir, { progressCallback, ...cleantsOptions })
+        const cleants = new Cleants(inputDir, outputDir, { progressCallback, ...cleantsOptions, replaceInternalImports })
 
         await cleants.convert()
 
