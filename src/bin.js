@@ -51,7 +51,7 @@ function runCommand() {
 
         const cleants = new Cleants(inputDir, outputDir, { progressCallback, ...cleantsOptions, replaceInternalImports })
 
-        await cleants.convert()
+        await cleants.run()
 
         spinner.succeed('Conversion completed successfully!')
       }

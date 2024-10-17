@@ -75,7 +75,7 @@ class Cleants {
    * 开始转换过程。
    * @returns {Promise<void>}
    */
-  async convert() {
+  async run() {
     this.progressCallback({ stage: 'start', progress: 0 })
 
     await this.copyFiles()
