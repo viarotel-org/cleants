@@ -1,10 +1,9 @@
 name: sync-gitee
 
 on:
-  workflow_run:
-    workflows: ['release']
-    types:
-      - completed
+  push:
+    tags:
+      - v*.*.*
 
 jobs:
   sync-to-gitee:
