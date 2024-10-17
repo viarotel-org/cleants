@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.1-12
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-11...v0.0.1-12)
+
+### 🔥 Performance
+
+- ♻️ CI flows ([a32d10f](https://github.com/viarotel-org/cleants/commit/a32d10f))
+
+### 🏡 Chore
+
+- **release:** V0.0.1-11 ([239eb89](https://github.com/viarotel-org/cleants/commit/239eb89))
+
+### ❤️ Contributors
+
+- Viarotel <viarotel@foxmail.com>
+
 ## v0.0.1-11
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-10...v0.0.1-11)
