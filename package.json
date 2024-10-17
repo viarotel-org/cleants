@@ -38,7 +38,7 @@
     "lint:fix": "eslint . --fix",
     "dev": "unbuild && npx .",
     "build": "unbuild",
-    "release": "changelogen --release --prerelease && unbuild && git push --follow-tags && npm publish",
+    "release": "changelogen --release --prerelease && unbuild && npm publish && git push --follow-tags",
     "prepare": "husky install"
   },
   "dependencies": {
