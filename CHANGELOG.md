@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.1-16
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-15...v0.0.1-16)
+
+### 🏡 Chore
+
+- **release:** V0.0.1-15 ([edcc23d](https://github.com/viarotel-org/cleants/commit/edcc23d))
+
+### ❤️ Contributors
+
+- Viarotel <viarotel@foxmail.com>
+
 ## v0.0.1-15
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-14...v0.0.1-15)

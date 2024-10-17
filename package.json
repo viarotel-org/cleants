@@ -1,7 +1,7 @@
 {
   "name": "cleants",
   "type": "module",
-  "version": "0.0.1-15",
+  "version": "0.0.1-16",
   "packageManager": "pnpm@9.12.1",
   "description": "🧹 Convert TypeScript to a cleaner JavaScript project",
   "author": "viarotel",
@@ -38,7 +38,7 @@
     "lint:fix": "eslint . --fix",
     "dev": "unbuild && npx .",
     "build": "unbuild",
-    "release": "unbuild && changelogen --release --prerelease && git push --follow-tags && npm publish",
+    "release": "unbuild && changelogen --release --prerelease && npm publish && git push --follow-tags",
     "prepare": "husky install"
   },
   "dependencies": {
