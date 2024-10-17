@@ -1,11 +1,7 @@
 # Cleants
 
-<!-- automd:badges -->
-
 [![npm version](https://img.shields.io/npm/v/cleants)](https://npmjs.com/package/cleants)
 [![npm downloads](https://img.shields.io/npm/dm/cleants)](https://npm.chart.dev/cleants)
-
-<!-- /automd -->
 
 > 🧹 Convert TypeScript to a cleaner JavaScript project
 
@@ -33,6 +29,8 @@ pnpm add cleants
 ```
 
 ## Usage
+
+> You can add a `cleants.config.js` file in the command execution directory to specify more configurations
 
 CLI Usage
 

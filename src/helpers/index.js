@@ -1,4 +1,7 @@
 import path from 'node:path'
+import fs from 'fs-extra'
+import { pathToFileURL } from 'node:url'
+
 import { extensionMap } from '../constants/index.js'
 
 export function hasScriptTag(content) {
@@ -68,4 +71,43 @@ export function capitalizeFirstLetter(str) {
   if (!str)
     return str
   return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+/**
+ * 加载当前工作目录下的 cleants.config.js 配置文件。
+ *
+ * @param configFileName 加载的配置文件名称
+ * @async
+ * @function loadConfig
+ * @returns {Promise<Object>} 返回配置对象。如果配置文件不存在，返回空对象或默认配置。
+ * @throws {Error} 如果加载配置文件时发生错误，抛出异常。
+ *
+ * @example
+ * (async () => {
+ *     const config = await loadConfig();
+ *     console.log('加载的配置:', config);
+ * })();
+ */
+export async function loadConfig(configFileName = 'cleants.config.js') {
+  const configFilePath = path.join(process.cwd(), configFileName)
+
+  try {
+    // 检查配置文件是否存在
+    const fileExists = await fs.pathExists(configFilePath)
+
+    if (!fileExists) {
+      return {}
+    }
+
+    // 动态导入配置文件
+    const configFileUrl = pathToFileURL(configFilePath).href
+
+    const config = await import(configFileUrl)
+
+    // 返回配置内容，确保导出为默认
+    return config.default || config
+  }
+  catch (error) {
+    return {}
+  }
 }

@@ -1,11 +1,7 @@
 # Cleants
 
-<!-- automd:badges -->
-
 [![npm 版本](https://img.shields.io/npm/v/cleants)](https://npmjs.com/package/cleants)
 [![npm 下载量](https://img.shields.io/npm/dm/cleants)](https://npm.chart.dev/cleants)
-
-<!-- /automd -->
 
 > 🧹 将 TypeScript 转换为更简洁的 JavaScript 项目
 
@@ -34,13 +30,15 @@ pnpm add cleants
 
 ## 使用方法
 
-### CLI 使用方法
+> 你可以在执行命令目录下添加 `cleants.config.js` 文件来指定更多配置
+
+CLI 使用方法
 
 ```shell
 npx cleants
 ```
 
-### 编程使用方法
+编程使用方法
 
 ```javascript
 import { Cleants } from 'cleants'

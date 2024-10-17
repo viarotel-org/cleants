@@ -3,7 +3,15 @@ import path from 'node:path'
 import { glob } from 'glob'
 import ts from 'typescript'
 
+import { loadConfig } from './helpers/index.js'
+
 import { basePlugin, replacePlugin, vuePlugin } from './plugins/index.js'
+
+let fileOptions = {}
+
+loadConfig().then((configs) => {
+  fileOptions = configs
+})
 
 /**
  * Cleants 类用于将 TypeScript 项目转换为 JavaScript 项目。
@@ -22,40 +30,44 @@ class Cleants {
    * @param {boolean} [options.replaceInternalImports] - 是否替换内部导入。
    */
   constructor(inputDir, outputDir, options = {}) {
-    this.inputDir = inputDir
-    this.outputDir = outputDir
-    this.progressCallback = options.progressCallback || (() => false)
-
     this.options = {
-      compilerOptions: options.compilerOptions || {},
-      ignoredCopyPatterns: options.ignoredCopyPatterns || [
+      compilerOptions: {},
+      ignoredCopyPatterns: [
         'node_modules',
         '.git',
         'dist',
         /\.d\.ts$/,
         file => file.endsWith('.log'),
       ],
-      ignoredConversionPatterns: options.ignoredConversionPatterns || [
+      ignoredConversionPatterns: [
         'vendor',
         /\.min\.js$/,
         file => file.includes('legacy'),
       ],
-      getOutputDir: options.getOutputDir || (inputDir => `${path.basename(inputDir)}.cleants`),
-      removeDependencies: options.removeDependencies || ['typescript', 'vue-tsc', '@types/node'],
-      replaceInternalImports: options.replaceInternalImports || true,
+      getOutputDir: inputDir => `${path.basename(inputDir)}.cleants`,
+      removeDependencies: ['typescript', 'vue-tsc', '@types/node'],
+      replaceInternalImports: false,
+      progressCallback: () => false,
+      plugins: [basePlugin, vuePlugin],
+      ...fileOptions,
+      ...options,
+    }
+
+    this.inputDir = inputDir ?? this.options.inputDir
+    this.outputDir = outputDir ?? this.options.outputDir
+
+    this.progressCallback = this.options.progressCallback
+    this.plugins = this.options.plugins
+
+    this.hooks = {
+      beforeConvert: this.options.hooks?.beforeConvert || (() => false),
+      afterConvert: this.options.hooks?.afterConvert || (() => false),
     }
 
     this.actualOutputDir = path.join(this.outputDir, this.options.getOutputDir(this.inputDir))
 
-    this.plugins = options.plugins || [basePlugin, vuePlugin]
-
     if (this.options.replaceInternalImports) {
       this.plugins.unshift(replacePlugin)
-    }
-
-    this.hooks = {
-      beforeConvert: options.hooks?.beforeConvert || (() => false),
-      afterConvert: options.hooks?.afterConvert || (() => false),
     }
   }
 
