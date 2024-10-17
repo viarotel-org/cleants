@@ -12,16 +12,25 @@ function runCommand() {
     .command('$0', description, () => {}, async (argv) => {
       p.intro(`${capitalizeFirstLetter(name)}: ${description}. Supported by Viarotel v${version}`)
 
-      const inputDir = await p.text({
-        message: 'Enter the TypeScript project directory to convert:',
-        validate: value => value.trim() === '' ? 'This field is required' : undefined,
-      })
+      const { _: io, $0, ...cleantsOptions } = argv
 
-      const outputDir = await p.text({
-        message: 'Enter the output project directory:',
-        validate: value => value.trim() === '' ? 'This field is required' : undefined,
-        initialValue: './',
-      })
+      let inputDir = io[0]
+      let outputDir = io[1]
+
+      if (!inputDir) {
+        inputDir = await p.text({
+          message: 'Enter the TypeScript project directory to convert:',
+          validate: value => value.trim() === '' ? 'This field is required' : undefined,
+        })
+      }
+
+      if (!outputDir) {
+        outputDir = await p.text({
+          message: 'Enter the output project directory:',
+          validate: value => value.trim() === '' ? 'This field is required' : undefined,
+          initialValue: './',
+        })
+      }
 
       const replaceInternalImports = await p.confirm({
         message: 'Automatically replace the suffix of inline imports?',
@@ -40,7 +49,7 @@ function runCommand() {
           spinner.text = `${stage}: ${progress.toFixed(2)}%`
         }
 
-        const cleants = new Cleants(inputDir, outputDir, { progressCallback })
+        const cleants = new Cleants(inputDir, outputDir, { progressCallback, ...cleantsOptions })
 
         await cleants.convert()
 
