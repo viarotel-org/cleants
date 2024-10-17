@@ -30,21 +30,30 @@ pnpm add cleants
 
 ## 使用方法
 
-> 你可以在执行命令目录下添加 `cleants.config.js` 文件来指定更多配置
-
-CLI 使用方法
+### CLI 使用方法
 
 ```shell
 npx cleants
 ```
 
-编程使用方法
+### 编程使用方法
 
 ```javascript
 import { Cleants } from 'cleants'
 
 const cleaner = new Cleants(inputDir, outputDir, options)
 await cleaner.run()
+```
+
+### 外部配置文件
+
+> 你可以在执行命令目录下添加 `cleants.config.js` 文件来指定更多配置
+
+```javascript
+module.exports = {
+  inputDir: 'D:\\user\\test',
+  outputDir: 'C:\\Users\\user\\Downloads'
+}
 ```
 
 ## API

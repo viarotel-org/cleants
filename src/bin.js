@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import Cleants from './index.js'
-import { capitalizeFirstLetter } from './helpers/index.js'
+import { capitalizeFirstLetter, loadConfig } from './helpers/index.js'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import * as p from '@clack/prompts'
@@ -14,23 +14,22 @@ function runCommand() {
 
       const { _: io, $0, ...cleantsOptions } = argv
 
-      let inputDir = io[0]
-      let outputDir = io[1]
+      const fileOptions = await loadConfig()
 
-      if (!inputDir) {
-        inputDir = await p.text({
-          message: 'Enter the TypeScript project directory to convert:',
-          validate: value => value.trim() === '' ? 'This field is required' : undefined,
-        })
-      }
+      let inputDir = io[0] || fileOptions.inputDir
+      let outputDir = io[1] || fileOptions.outputDir
 
-      if (!outputDir) {
-        outputDir = await p.text({
-          message: 'Enter the output project directory:',
-          validate: value => value.trim() === '' ? 'This field is required' : undefined,
-          initialValue: './',
-        })
-      }
+      inputDir = await p.text({
+        message: 'Enter the TypeScript project directory to convert:',
+        validate: value => value.trim() === '' ? 'This field is required' : undefined,
+        initialValue: inputDir,
+      })
+
+      outputDir = await p.text({
+        message: 'Enter the output project directory:',
+        validate: value => value.trim() === '' ? 'This field is required' : undefined,
+        initialValue: outputDir || './',
+      })
 
       const replaceInternalImports = await p.confirm({
         message: 'Automatically replace the suffix of inline imports?',

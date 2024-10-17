@@ -30,21 +30,30 @@ pnpm add cleants
 
 ## Usage
 
-> You can add a `cleants.config.js` file in the command execution directory to specify more configurations
-
-CLI Usage
+### CLI Usage
 
 ```shell
 npx cleants
 ```
 
-Programmatic Usage
+### Programmatic Usage
 
 ```javascript
 import { Cleants } from 'cleants'
 
 const cleaner = new Cleants(inputDir, outputDir, options)
 await cleaner.run()
+```
+
+### External profile
+
+> You can add a `cleants.config.js` file in the command execution directory to specify more configurations
+
+```javascript
+module.exports = {
+  inputDir: 'D:\\user\\test',
+  outputDir: 'C:\\Users\\user\\Downloads'
+}
 ```
 
 ## API
