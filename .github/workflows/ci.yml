@@ -9,6 +9,10 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for the tag push to complete
+        run: |
+          sleep 30
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -28,22 +32,7 @@ jobs:
         run: |
           pnpm install
           pnpm build
-
-      - name: Confirm version
-        run: |
-          echo "Current version:"
-          cat package.json | grep version
-
-      - name: Push new tags
-        run: |
-          git push --follow-tags
-          sleep 10  # Delay to ensure tags are processed
-
-      - name: Checkout latest version
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+          
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
