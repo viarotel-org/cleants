@@ -52,7 +52,24 @@ await cleaner.run()
 ```javascript
 module.exports = {
   inputDir: 'D:\\Projects\\demo',
-  outputDir: 'C:\\Users\\viarotel\\Downloads'
+  outputDir: 'C:\\Users\\viarotel\\Downloads',
+  compilerOptions: {},
+  ignoredCopyPatterns: [
+    'node_modules',
+    '.git',
+    'dist',
+    /\.d\.ts$/,
+    file => file.endsWith('.log')
+  ],
+  ignoredConversionPatterns: [
+    'vendor',
+    /\.min\.js$/,
+    file => file.includes('legacy')
+  ],
+  getOutputDir: inputDir => `${path.basename(inputDir)}.cleants`,
+  removeDependencies: ['typescript', 'vue-tsc', '@types/node'],
+  replaceInternalImports: true,
+  plugins: []
 }
 ```
 
