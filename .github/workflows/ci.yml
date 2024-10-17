@@ -9,27 +9,31 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: enable corepack and pnpm
+      - name: Enable corepack and pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
 
-      - name: install dependencies and build
+      - name: Install dependencies and build
         run: |
           pnpm install
           pnpm build
 
-      - name: release
+      - name: Fetch latest tags
+        run: |
+          git fetch --tags
+
+      - name: Release
         uses: softprops/action-gh-release@v2
         with:
           draft: false
