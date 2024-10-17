@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.0.1-9
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-8...v0.0.1-9)
+
+### 📖 Documentation
+
+- 📝 Update README ([5f9396f](https://github.com/viarotel-org/cleants/commit/5f9396f))
+- 📝 Update README ([84aa5e5](https://github.com/viarotel-org/cleants/commit/84aa5e5))
+
+### 🏡 Chore
+
+- **release:** V0.0.1-8 ([67318da](https://github.com/viarotel-org/cleants/commit/67318da))
+
+### 🤖 CI
+
+- 🔧 Support synchronization to Gitee ([5996913](https://github.com/viarotel-org/cleants/commit/5996913))
+- 📝 Update CI name ([70fe0cd](https://github.com/viarotel-org/cleants/commit/70fe0cd))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.1-8
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-7...v0.0.1-8)
