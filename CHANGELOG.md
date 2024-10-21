@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1...v0.0.2)
+
+### 🔥 Performance
+
+- 🚀Update default ignoredCopyPatterns configuration ([8ddc9f1](https://github.com/viarotel-org/cleants/commit/8ddc9f1))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.1
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1-20...v0.0.1)
