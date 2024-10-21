@@ -104,10 +104,10 @@ TypeScript 编译器选项。
 默认值：
 ```javascript
 [
-  'node_modules',
   '.git',
   'dist',
   /\.d\.ts$/,
+  file => file.includes('node_modules'),
   file => file.endsWith('.log')
 ]
 ```

@@ -104,10 +104,10 @@ Patterns to ignore during the copy phase.
 Default:
 ```javascript
 [
-  'node_modules',
   '.git',
   'dist',
   /\.d\.ts$/,
+  file => file.includes('node_modules'),
   file => file.endsWith('.log')
 ]
 ```
