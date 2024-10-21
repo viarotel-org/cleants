@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/cleants)](https://npmjs.com/package/cleants)
 [![npm downloads](https://img.shields.io/npm/dm/cleants)](https://npm.chart.dev/cleants)
 
-> 🧹 Convert TypeScript to a cleaner JavaScript project
+> 🧹 Convert TypeScript to a cleaner JavaScript project [中文文档](https://github.com/viarotel-org/cleants/blob/main/README-CN.md)
 
 ## Features
 
@@ -55,10 +55,10 @@ module.exports = {
   outputDir: 'C:\\Users\\viarotel\\Downloads',
   compilerOptions: {},
   ignoredCopyPatterns: [
-    'node_modules',
     '.git',
     'dist',
     /\.d\.ts$/,
+    file => file.includes('node_modules'),
     file => file.endsWith('.log')
   ],
   ignoredConversionPatterns: [
