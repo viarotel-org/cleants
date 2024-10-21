@@ -33,10 +33,10 @@ class Cleants {
     this.options = {
       compilerOptions: {},
       ignoredCopyPatterns: [
-        'node_modules',
         '.git',
         'dist',
         /\.d\.ts$/,
+        file => file.includes('node_modules'),
         file => file.endsWith('.log'),
       ],
       ignoredConversionPatterns: [
