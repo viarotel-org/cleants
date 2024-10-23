@@ -109,7 +109,7 @@ export function capitalizeFirstLetter(str) {
  * })();
  */
 export async function loadConfig(configFileName = 'cleants.config.js') {
-  const configFilePath = path.join(process.cwd(), configFileName)
+  const configFilePath = path.join(process.cwd(), process.env.CLEANTS_CONFIG_DIR || '', configFileName)
 
   try {
     // 检查配置文件是否存在

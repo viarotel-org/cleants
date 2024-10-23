@@ -16,14 +16,14 @@ export const vuePlugin = () => ({
     const script = descriptor.scriptSetup || descriptor.script
 
     if (!script) {
-      return updateScriptAttrs(content, { lang: 'js' })
+      return updateScriptAttrs(content, { lang: void 0 })
     }
 
     const scriptContent = script.content
 
     const lang = script.lang || 'js'
 
-    const replaceLang = lang === 'tsx' ? 'jsx' : 'js'
+    const replaceLang = lang === 'tsx' ? 'jsx' : void 0
 
     let processContent = ['ts', 'tsx'].includes(lang)
       ? `\n${ctx.transpileFile(scriptContent, `.${lang}`)}`
