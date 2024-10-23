@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.2...v0.0.3)
+
+### 🔥 Performance
+
+- ➖ Remove unnecessary language flags at build time ([227465f](https://github.com/viarotel-org/cleants/commit/227465f))
+
+### 📖 Documentation
+
+- 📝 Update README ([866fb49](https://github.com/viarotel-org/cleants/commit/866fb49))
+- 📝 Update README ([e31a380](https://github.com/viarotel-org/cleants/commit/e31a380))
+
+### ❤️ Contributors
+
+- Viarotel ([@viarotel-org](http://github.com/viarotel-org))
+
 ## v0.0.2
 
 [compare changes](https://github.com/viarotel-org/cleants/compare/v0.0.1...v0.0.2)
