@@ -148,15 +148,15 @@ Default: `[basePlugin, vuePlugin]`
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/viarotel-org/cleants/issues).
 
-## Support
+## Donate
 
-If you find this project helpful for your work or study, please consider starring the project or buying me a cup of coffee through the links below:
+If this project has helped you, consider buying me a coffee to keep me motivated for further improvements 😛
 
 <div style="display:flex;">
-  <img src="https://cdn.jsdelivr.net/gh/viarotel-org/escrcpy@main/src/assets/donate/viarotel-wepay.png" alt="viarotel-wepay" width="30%">
-  <img src="https://cdn.jsdelivr.net/gh/viarotel-org/escrcpy@main/src/assets/donate/viarotel-alipay.png" alt="viarotel-alipay" width="30%">
+  <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-wepay.png" alt="viarotel-wepay" width="30%">
+  <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-alipay.png" alt="viarotel-alipay" width="30%">
   <a href="https://www.paypal.com/paypalme/viarotel" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/viarotel-org/escrcpy@main/src/assets/donate/viarotel-paypal.png" alt="viarotel-paypal" width="30%">
+    <img src="https://cdn.jsdelivr.net/gh/viarotel/resources@latest/donate/viarotel-paypal.png" alt="viarotel-paypal" width="30%">
   </a>
 </div>
 
